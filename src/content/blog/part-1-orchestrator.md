@@ -32,6 +32,36 @@ For our use case—ephemeral, browser-based sandboxes—this was the right tool.
 
 ---
 
+## Architecture
+
+Here is the "handshake" between the user's browser, the Rust orchestrator (acting as the intermediate proxy), and the isolated MicroVM running Alpine Linux. A key problem was how to hand off network configuration without the Rust proxy blocking itself. We solved this with the **Handoff Phase** below, where the orchestrator pre-creates the TAP device and simply passes it to the Firecracker process before the VM boots. This solved our dreaded "Resource Busy" issues and prevented permission collisions.
+
+```mermaid
+sequenceDiagram
+    participant B as Browser (xterm.js)
+    participant R as Rust Orchestrator (Axum)
+    participant F as Firecracker VMM
+    participant G as Alpine Guest (MicroVM)
+
+    Note over R,F: Handoff Phase
+    R->>R: 1. Create Persistent TAP (fctapX)
+    R->>R: 2. Set IP (10.200.X.1) & MTU
+    R->>F: 3. PUT /network-interfaces (fctapX)
+    
+    Note over R,G: Boot Phase
+    R->>F: 4. PUT /boot-source (fc_ip=10.200.X.2)
+    F->>G: 5. Kernel Boot + Init Scripts
+    G->>G: 6. fc-network script applies IPs
+    
+    Note over B,G: Interaction Phase
+    B->>R: 7. WebSocket (Keystrokes)
+    R->>G: 8. Stdin (Serial Console)
+    G->>R: 9. Stdout (Terminal Output)
+    R->>B: 10. WebSocket (ANSI Stream)
+```
+
+---
+
 ## Chapter 3: The Ephemeral Storage Pattern
 
 Here's the critical insight: **every session gets its own clone of the rootfs**.

@@ -84,3 +84,30 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Footer />
 	</body>
 </html>
+
+<script type="module">
+	import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+	document.addEventListener('DOMContentLoaded', () => {
+		mermaid.initialize({ startOnLoad: false, theme: 'default' });
+		
+		// Astro's Shiki highlights mermaid code blocks with class `language-mermaid`.
+		// We need to replace these code blocks with a div that mermaid can render.
+		const mermaidBlocks = document.querySelectorAll('.language-mermaid');
+		
+		mermaidBlocks.forEach((block) => {
+			const code = block.textContent;
+			const mermaidDiv = document.createElement('div');
+			mermaidDiv.className = 'mermaid';
+			mermaidDiv.textContent = code;
+			
+			// Replace the parent <pre> that wraps the <code> block.
+			const pre = block.closest('pre');
+			if (pre) {
+				pre.parentNode.replaceChild(mermaidDiv, pre);
+			}
+		});
+
+		mermaid.run({ querySelector: '.mermaid' });
+	});
+</script>
