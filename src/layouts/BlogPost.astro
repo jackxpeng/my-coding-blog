@@ -91,23 +91,29 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	document.addEventListener('DOMContentLoaded', () => {
 		mermaid.initialize({ startOnLoad: false, theme: 'default' });
 		
-		// Astro's Shiki highlights mermaid code blocks with class `language-mermaid`.
-		// We need to replace these code blocks with a div that mermaid can render.
-		const mermaidBlocks = document.querySelectorAll('.language-mermaid');
+		// Astro's Shiki highlights mermaid code blocks with `data-language="mermaid"`
+		// on the <pre> tag.
+		const mermaidPreTags = document.querySelectorAll('pre[data-language="mermaid"]');
 		
-		mermaidBlocks.forEach((block) => {
-			const code = block.textContent;
+		mermaidPreTags.forEach((pre) => {
+			// Extract the raw text from the code block, stripping out the span elements Shiki adds
+			// The easiest way is to map the textContent of each .line element and join them with newlines
+			const lines = Array.from(pre.querySelectorAll('.line'))
+				.map(line => line.textContent)
+				.join('\n');
+				
+			// If for some reason there are no .line elements, fallback to raw textContent
+			const code = lines || pre.textContent;
+
 			const mermaidDiv = document.createElement('div');
 			mermaidDiv.className = 'mermaid';
 			mermaidDiv.textContent = code;
 			
-			// Replace the parent <pre> that wraps the <code> block.
-			const pre = block.closest('pre');
-			if (pre) {
-				pre.parentNode.replaceChild(mermaidDiv, pre);
-			}
+			// Replace the <pre> block with our new div
+			pre.parentNode.replaceChild(mermaidDiv, pre);
 		});
 
+		// Tell Mermaid to render the new divs
 		mermaid.run({ querySelector: '.mermaid' });
 	});
 </script>
