@@ -5,32 +5,165 @@ import Layout from '../layouts/BlogPost.astro';
 
 <Layout
 	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
+	description="Jack Peng's resume and learning journey"
 >
-	<p>
-		Hi, I'm Jack. I'm a software engineer deeply passionate about <strong>systems engineering, virtualization, and networking</strong>. I spend most of my time exploring the boundaries between the Linux kernel and user space, or building high-performance networking tools.
-	</p>
+	<div class="prose max-w-none">
+		<h1>Jack Peng</h1>
+		<p class="text-gray-500 text-sm mb-8">
+			SOFTWARE/AI ENGINEER • Redwood City, CA • <a href="mailto:jackpeng@gmail.com">jackpeng@gmail.com</a> • <a href="https://linkedin.com/in/jack-peng-5475b45/">LinkedIn</a>
+		</p>
 
-	<p>
-		My core strengths involve bridging the gap between low-level system APIs and modern developer experiences. I enjoy taking complex, "scary" infrastructure concepts (like TAP devices, KVM hypervisors, and iptables NAT routing) and wrapping them in elegant, accessible APIs.
-	</p>
+		<h2>The Journey: A Perpetual Student of the Stack</h2>
+		<p>
+			I’m a software explorer. My path hasn't been about following a predefined roadmap, but rather following the "scent" of interesting problems. I transitioned into software in my late 30s, and since then, I’ve found that the more I learn, the more I realize how much fun there is to be had in the layers I haven't touched yet.
+		</p>
 
-	<h3>Technical Strengths</h3>
-	<ul>
-		<li><strong>Systems Programming:</strong> Proficient in <strong>Rust</strong>. I build fast, concurrent, and memory-safe systems applications, often leveraging <code>tokio</code> for async I/O multiplexing.</li>
-		<li><strong>Virtualization (KVM/Firecracker):</strong> Hands-on experience building custom microVM orchestrators. I've designed systems that boot ephemeral, fully-isolated Linux sandboxes in milliseconds.</li>
-		<li><strong>Linux Networking:</strong> Extensive knowledge of the Linux network stack. I routinely work with virtual interfaces (TAP/TUN), routing tables, NAT configurations via iptables, and socket programming.</li>
-		<li><strong>Inter-process Communication (IPC):</strong> Deep dive experience with Unix Domain Sockets and VSOCK for host-to-guest communication bridges.</li>
-		<li><strong>Web Architecture:</strong> Bridging the low-level systems with the web, using WebSockets to tunnel binary protocols (like terminal serial output) directly to browser frontends.</li>
-	</ul>
+		<h3>Exploring the "How"</h3>
+		<p>I didn't set out to become a systems engineer; I just started pulling on threads.</p>
+		<ul>
+			<li><strong>The Backend:</strong> I started with Go and Python, falling in love with the speed of building and the power of concurrency.</li>
+			<li><strong>The Metal:</strong> That led me to Rust, where I traded "moving fast" for the satisfying precision of memory safety and ownership.</li>
+			<li><strong>The Virtual:</strong> Recently, I've been deep in the world of Firecracker MicroVMs, learning how to hand-roll networking TAPs and bridge the gap between a web terminal and a Linux kernel.</li>
+		</ul>
 
-	<p>
-		Currently, I'm hacking on <code>firecracker-rust</code>, an experimental orchestrator designed to provide instant, disposable, browser-based sandboxes without the heavy overhead of Docker or Kubernetes.
-	</p>
+		<h3>What’s on the Horizon?</h3>
+		<p>I’m currently in a "learning sprint," and my curiosity is pulling me in three exciting directions:</p>
+		<ul>
+			<li><strong>Agentic Patterns:</strong> Exploring the world of AI agents—not just as chatbots, but as autonomous systems that can reason and execute tasks.</li>
+			<li><strong>The Frontend:</strong> I’ve spent a lot of time "under the hood," so now I’m turning my attention to the dashboard. I'm diving into modern frontend development (like this Astro blog!) to make the systems I build beautiful and intuitive.</li>
+			<li><strong>Kubernetes (K8s):</strong> After building my own microVM orchestrator from scratch, I’m ready to see how the industry "pros" handle orchestration at a massive scale.</li>
+		</ul>
 
-	<p>
-		When I'm not wrestling with <code>Resource Busy</code> networking errors or kernel panics, I'm probably writing about what I've learned here on this blog.
-	</p>
+		<h3>Beyond the Code</h3>
+		<p>When I'm not wrestling with Rust lifetimes or iptables rules, I’m probably:</p>
+		<ul>
+			<li><strong>At the Piano:</strong> Learning the intricacies of a Mozart or Chopin piece.</li>
+			<li><strong>On the Court:</strong> Playing basketball or table tennis (Ping Pong technique is a never-ending pursuit!).</li>
+			<li><strong>In the Past:</strong> Reading American history or deep-diving into a historical biography.</li>
+		</ul>
+		<p>I'm having a blast exploring this vast landscape, and this blog is my way of documenting the "aha!" moments along the way.</p>
+
+		<hr class="my-12 border-gray-200" />
+
+		<h2 class="text-2xl font-bold mb-6">My Learning Stack</h2>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+			<!-- Go/Python Card -->
+			<div class="relative group rounded-xl p-8 bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20 z-10 overflow-hidden">
+				<div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+				<div class="relative z-20">
+					<div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 origin-bottom-left">🚀</div>
+					<h3 class="text-xl font-bold text-gray-900 m-0 mb-2">Go & Python</h3>
+					<p class="text-gray-600 text-sm leading-relaxed m-0">
+						The backend foundations. Speed, concurrency, and rapid iteration. Where my software journey accelerated.
+					</p>
+				</div>
+			</div>
+
+			<!-- Rust/Firecracker Card -->
+			<div class="relative group rounded-xl p-8 bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-orange-500/20 z-10 overflow-hidden">
+				<div class="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+				<div class="relative z-20">
+					<div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 origin-bottom-left">🦀</div>
+					<h3 class="text-xl font-bold text-gray-900 m-0 mb-2">Rust & Firecracker</h3>
+					<p class="text-gray-600 text-sm leading-relaxed m-0">
+						Close to the metal. Memory safety, extreme performance, and custom microVM orchestration.
+					</p>
+				</div>
+			</div>
+
+			<!-- Agentic AI Card -->
+			<div class="relative group rounded-xl p-8 bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-purple-500/20 z-10 overflow-hidden">
+				<div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-fuchsia-50/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+				<div class="relative z-20">
+					<div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 origin-bottom-left">🧠</div>
+					<h3 class="text-xl font-bold text-gray-900 m-0 mb-2">Agentic AI</h3>
+					<p class="text-gray-600 text-sm leading-relaxed m-0">
+						The frontier. Exploring autonomous systems, reasoning boundaries, and LLM-driven architectures.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<hr class="my-12 border-gray-200" />
+
+		<h2>Professional Experience</h2>
+		
+		<div class="mb-8">
+			<h4 class="mb-1 flex justify-between items-baseline">
+				<strong>Independent ML Enthusiast</strong>
+				<span class="text-gray-500 text-sm font-normal">10/2024 - present</span>
+			</h4>
+			<ul class="mt-2">
+				<li>MIT and Linkedin Learning courses on ML, Transformers, OpenAI API, vector databases, etc.</li>
+				<li>Weekly paper reading and implementation meetings</li>
+			</ul>
+		</div>
+
+		<div class="mb-8">
+			<h4 class="mb-1 flex justify-between items-baseline">
+				<strong>Verkada</strong> <span class="text-gray-500 font-normal ml-2">Software Engineer</span>
+				<span class="text-gray-500 text-sm font-normal">01/2024 - 10/2024</span>
+			</h4>
+			<ul class="mt-2">
+				<li>Concurrent Kafka python client library development with 10x throughput increase per kubernetes pod.</li>
+				<li>BI tools deployment in AWS and data migration. Open source software auto-patching pipelines.</li>
+				<li>AWS MWAA Airflow jobs development and maintenance.</li>
+			</ul>
+		</div>
+
+		<div class="mb-8">
+			<h4 class="mb-1 flex justify-between items-baseline">
+				<strong>Google Cloud</strong> <span class="text-gray-500 font-normal ml-2">Software Engineer</span>
+				<span class="text-gray-500 text-sm font-normal">01/2020 - 03/2023</span>
+			</h4>
+			<ul class="mt-2">
+				<li>Maintained and optimized a highly scalable data protection workflow to reduce toil and increase reliability of the restore process.</li>
+				<li>Led object restore automation project.</li>
+				<li>Created a continuous restore testing framework that’s scalable, modular, and extendable.</li>
+				<li>Designed and implemented efficient restore flow extension to accommodate the new storage efficiency project.</li>
+				<li>Designed and implemented resilient read path extensions to work for the storage efficiency project.</li>
+				<li>Designed efficiency project configuration system and risk control system.</li>
+			</ul>
+		</div>
+
+		<div class="mb-8">
+			<h4 class="mb-1 flex justify-between items-baseline">
+				<strong>Samsung</strong> <span class="text-gray-500 font-normal ml-2">Software Engineer</span>
+				<span class="text-gray-500 text-sm font-normal">05/2016 - 12/2019</span>
+			</h4>
+			<ul class="mt-2">
+				<li><strong>Pay Platform Integration Project (05/2016 - 10/2017):</strong> Integrated a major credit card with Samsung pay’s token requester server that handles the interaction with the Samsung Pay mobile app and the credit card company’s server. Implemented Samsung Health data pipeline to feed app information into a data warehouse for the analytics team.</li>
+				<li><strong>ML/NLP Project (11/2017 - 12/2019):</strong> Natural language understanding and speech recognition.</li>
+			</ul>
+		</div>
+
+		<div class="mb-8">
+			<h4 class="mb-1 flex justify-between items-baseline">
+				<strong>Sanqtech</strong> <span class="text-gray-500 font-normal ml-2">Software Developer</span>
+				<span class="text-gray-500 text-sm font-normal">07/2014 - 02/2016</span>
+			</h4>
+			<ul class="mt-2">
+				<li>Backend api development for e-commerce platform.</li>
+				<li>JavaScript and android app plugin development.</li>
+			</ul>
+		</div>
+
+		<div class="mb-8">
+			<h4 class="mb-1 flex justify-between items-baseline">
+				<strong>Shmoop</strong> <span class="text-gray-500 font-normal ml-2">Software Developer</span>
+				<span class="text-gray-500 text-sm font-normal">03/2012 - 07/2014</span>
+			</h4>
+			<ul class="mt-2">
+				<li>AWS Cloud based analytics and business intelligence.</li>
+				<li>Web development using PHP and JavaScript.</li>
+			</ul>
+		</div>
+
+		<h2>Education</h2>
+		<ul>
+			<li><strong>Graduate Research:</strong> PhD student in EE, UC Berkeley, Berkeley, CA</li>
+			<li><strong>Master’s in EECS:</strong> UC Berkeley, Berkeley, CA</li>
+			<li><strong>Bachelor’s in EECS:</strong> UC Berkeley, Berkeley, CA</li>
+		</ul>
+	</div>
 </Layout>
