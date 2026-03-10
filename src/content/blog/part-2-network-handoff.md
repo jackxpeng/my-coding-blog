@@ -2,7 +2,6 @@
 title: 'Part 2: The Network Handoff'
 description: 'Deep dive into TAP devices, /30 subnets, and solving the Resource Busy error when networking Firecracker microVMs.'
 pubDate: 'Mar 10 2026'
-heroImage: '../../assets/blog-placeholder-2.jpg'
 ---
 
 ## Part 2: The Network Handoff — Navigating TAP Devices and Subnets

@@ -2,7 +2,7 @@
 title: 'Part 1: Building a Lightning-Fast MicroVM Orchestrator'
 description: 'From Sadservers to Firecracker—how we built isolated, browser-based sandboxes using Rust, Firecracker, and ephemeral storage'
 pubDate: 'Mar 09 2026'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+heroImage: '../../assets/digital_ocean_server.png'
 ---
 
 ## Part 1: Building a Lightning-Fast MicroVM Orchestrator — From Sadservers to Firecracker

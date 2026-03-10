@@ -2,7 +2,7 @@
 title: 'Part 3: The Guest Experience'
 description: 'Building a standalone Rust guest-agent, implementing VSOCK communication, and achieving dynamic terminal resizing.'
 pubDate: 'Mar 11 2026'
-heroImage: '../../assets/blog-placeholder-3.jpg'
+heroImage: '../../assets/web_clients.png'
 ---
 
 ## Part 3: The Guest Experience — Bridging the Gap with VSOCK
