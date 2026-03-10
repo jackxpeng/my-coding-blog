@@ -13,35 +13,27 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
+			<h1>🚀 The Firecracker MicroVM Series</h1>
 			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
+				Welcome to my engineering blog! Here I detail the process of building a lightning-fast
+				MicroVM orchestrator from scratch using Rust, Firecracker, and WebSockets.
 			</p>
 			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
+				The goal of this project was to explore hardware isolation, dynamic Linux networking, and the hidden complexities of terminal emulation bridging. Dive into the 3-part series:
 			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
 			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
+				<li>
+					<strong><a href="/my-coding-blog/blog/part-1-orchestrator/">Part 1: The Orchestrator</a></strong> - Spawning Firecracker, managing Unix sockets, and the ephemeral "Clone-on-Demand" storage pattern.
+				</li>
+				<li>
+					<strong><a href="/my-coding-blog/blog/part-2-network-handoff/">Part 2: The Network Handoff</a></strong> - Tap devices, /24 subnets, NAT routing, and solving the Resource Busy error.
+				</li>
+				<li>
+					<strong><a href="/my-coding-blog/blog/part-3-guest-experience/">Part 3: The Guest Experience</a></strong> - Building the guest-agent in Rust, VSOCK communication, and dynamic terminal resizing via ioctl.
+				</li>
 			</ul>
 			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+				Head over to the <a href="/my-coding-blog/blog/">Blog</a> for all posts.
 			</p>
 		</main>
 		<Footer />
